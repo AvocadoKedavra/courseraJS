@@ -6,14 +6,14 @@
  */
 module.exports = function (hours, minutes, interval) {
     function validTime(hours,minutes) {
+        if ((hours/24)>=1) {
+            hours= hours-Math.floor(hours/24)*24;
+            }
         if (hours<10) {
         hours = '0' + hours;
         }
         if (minutes<10) {
         minutes = '0' + minutes;
-        }
-        if (hours>=24) {
-        hours = '00';
         }
         return hours + ':' + minutes;
     }
